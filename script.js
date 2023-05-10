@@ -1,5 +1,5 @@
 let intentos = 6;
-let diccionario = ['APPLE', 'HURLS', 'WINGS', 'YOUTH',"RED"]
+let diccionario = ['APPLE', 'HURLS', 'WINGS', 'YOUTH',"AGAIN","ANGRY","BASES","ABOUT","BEGUN","BELOW","EVERY","DRIVE","FUNNY","GLASS","HORSE","HOTEL","HUMAN","IDEAL","FIANL","MIXED","LUCKY","NURSE"];
 const palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
 
 function init(){
@@ -31,10 +31,15 @@ function intentar(){
             SPAN.style.backgroundColor =  '#a4aec4';
         }
         ROW.appendChild(SPAN)
+       
     }
+    intentos--;
     GRID.appendChild(ROW)
     if (intento === palabra) {
-        terminar('¡Ganaste!');
+        terminar('<h1>¡Ganaste!😀</h1>');
+    }
+    if (intentos == 0){
+        terminar("<h1>PERDISTE!😖</h1>")
     }
 }
 
